@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+    S3NotifierFunction:
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: .
+            Handler: index.handler
+            Runtime: nodejs8.10
+            Environment:
+                Variables:
+                    SLACK_WEBHOOK_URL: https://hooks.slack.com/services/AA/BB/XXXXXX
